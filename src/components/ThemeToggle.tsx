@@ -33,14 +33,14 @@ const ThemeToggle = () => {
     <button
       onClick={toggleTheme}
       className={cn(
-        "hover:cursor-pointer z-50",
+        "hover:cursor-pointer z-60",
         "fixed top-5 right-5 transition-colors duration-200",
       )}
     >
       {isDarkMode ? (
-        <Sun className="h-5 w-5 text-yellow-500" />
+        <Sun className="h-6 w-6 text-yellow-500" />
       ) : (
-        <Moon className="h-5 w-5 text-blue-500" />
+        <Moon className="h-6 w-6 text-blue-500" />
       )}
     </button>
   );

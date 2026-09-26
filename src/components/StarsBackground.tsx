@@ -27,20 +27,31 @@ const StarsBackground = () => {
     generateStars();
     generateMeteors();
 
+    let resizeTimeout: number | undefined;
     const handleResize = () => {
-      generateStars();
-      generateMeteors();
+      window.clearTimeout(resizeTimeout);
+      resizeTimeout = window.setTimeout(() => {
+        generateStars();
+        generateMeteors();
+      }, 150);
     };
 
     window.addEventListener("resize", handleResize);
 
-    return () => window.removeEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      window.clearTimeout(resizeTimeout);
+    };
   }, []);
 
   const generateStars = () => {
     const newStars = [];
-    const numberOfStars = Math.floor(
-      (window.innerWidth * window.innerHeight) / 10000,
+    const numberOfStars = Math.max(
+      12,
+      Math.min(
+        120,
+        Math.floor((window.innerWidth * window.innerHeight) / 25000),
+      ),
     );
 
     for (let i = 0; i < numberOfStars; i++) {
@@ -59,7 +70,7 @@ const StarsBackground = () => {
 
   const generateMeteors = () => {
     const newMeteors = [];
-    const numberOfMeteors = 15;
+    const numberOfMeteors = 5;
     // For Dynamic Number of Meteors: Math.floor((window.innerWidth * window.innerHeight) / 1000000);
 
     for (let i = 0; i < numberOfMeteors; i++) {
@@ -83,13 +94,13 @@ const StarsBackground = () => {
         return (
           <div
             key={star.id}
-            className="star animate-pulse-subtle"
+            className={`star ${star.id % 5 === 0 ? "animate-pulse-subtle" : ""}`}
             style={{
               height: star.size + "px",
               width: star.size + "px",
               left: star.x + "%",
               top: star.y + "%",
-              opacity: star.opacity + "%",
+              opacity: star.opacity,
               animationDuration: star.animationDuration + "s",
             }}
           ></div>
