@@ -44,16 +44,6 @@ const Navbar = () => {
           </span>
         </a>
 
-        <button
-          type="button"
-          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-          aria-expanded={isMenuOpen}
-          onClick={() => setIsMenuOpen((prev) => !prev)}
-          className="fixed top-3 right-16 z-50 p-2 text-foreground md:hidden"
-        >
-          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
-
         {/* Desktop Version */}
         <div className="hidden md:flex space-x-10 mr-5">
           {navbarItems.map((item, key) => (
@@ -66,6 +56,17 @@ const Navbar = () => {
             </a>
           ))}
         </div>
+
+        {/* Toggle-Button For Mobile Version */}
+        <button
+          type="button"
+          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+          aria-expanded={isMenuOpen}
+          onClick={() => setIsMenuOpen((prev) => !prev)}
+          className="fixed top-3 right-16 z-50 p-2 text-foreground md:hidden"
+        >
+          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
 
         {/* Mobile Version */}
         <div
