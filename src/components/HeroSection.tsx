@@ -3,13 +3,13 @@ import { ArrowDown } from "lucide-react";
 export default function HeroSection() {
   return (
     <section
-      id="#hero"
+      id="hero"
       className="relative min-h-screen flex flex-col justify-center items-center mx-auto"
     >
       <div className="container max-w-4xl mx-auto text-center z-10">
         <div className="space-y-6">
           {/* NAME */}
-          <h1 className="text-4xl md:text-5xl font-bold">
+          <h1 className="text-4xl md:text-5xl font-bold flex flex-wrap justify-center items-center text-foreground">
             <span className="opacity-0 animate-fade-in">Hi, I'am</span>
             <span className="opacity-0 animate-fade-in-delay-1 text-primary ml-2">
               Abdelrahman
@@ -22,8 +22,8 @@ export default function HeroSection() {
           {/* BIO */}
           <p className="text-lg md:text-xl text-foreground max-w-2xl opacity-0 animate-fade-in-delay-3 mx-auto">
             Software Engineer and Web Developer committed to lifelong learning
-            and innovation. I'm always exploring new technologies and
-            contributing to projects that make
+            and innovation. Always exploring new technologies and contributing
+            to projects that make different
           </p>
 
           {/* GO TO PROJECTS */}
