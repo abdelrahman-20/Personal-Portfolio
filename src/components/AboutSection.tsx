@@ -1,9 +1,10 @@
-import { Briefcase, Code, University } from "lucide-react";
+import { ArrowDown, Briefcase, Code, University } from "lucide-react";
 
 const AboutSection = () => {
   return (
-    <section id="about">
+    <section id="about" className="relative flex min-h-screen items-center">
       <div className="container max-w-5xl mx-auto  py-24 px-5 space-y-10">
+        {/* SECTION-HEADER */}
         <h2 className="text-4xl md:text-5xl font-bold">
           About <span className="text-primary">Me</span>
         </h2>
@@ -11,6 +12,7 @@ const AboutSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           {/* LEFT-COLUMN */}
           <div className="space-y-10">
+            {/* SIMPLE-INTRO */}
             <h3 className="text-lg md:text-xl font-semibold">
               Passionate <span className="text-primary">Web Developer</span>,
               And Software Engineer
@@ -26,7 +28,7 @@ const AboutSection = () => {
               that make different
             </p>
 
-            {/* NAVIGATION-BUTTONS */}
+            {/* ACTIONS-BUTTONS -- Contact, Get-CV */}
             <div className="pt-5 flex flex-col md:flex-row gap-6 justify-center items-center">
               <a href="#contact" className="cosmic-button">
                 Get In Touch
@@ -96,6 +98,14 @@ const AboutSection = () => {
             </div>
           </div>
         </div>
+      </div>
+
+      {/* SCROLL-DOWN */}
+      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce pt-20">
+        <a href="#skills" className="flex flex-col items-center">
+          <span className="text-sm text-foreground/80 mb-2">My-Skills</span>
+          <ArrowDown />
+        </a>
       </div>
     </section>
   );

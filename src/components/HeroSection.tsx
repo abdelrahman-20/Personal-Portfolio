@@ -8,8 +8,8 @@ export default function HeroSection() {
     >
       <div className="container max-w-4xl mx-auto text-center z-10">
         <div className="space-y-6">
-          {/* NAME */}
-          <h1 className="text-4xl md:text-5xl font-bold flex flex-wrap justify-center items-center text-foreground">
+          {/* SECTION-HEADER */}
+          <h2 className="text-4xl md:text-5xl font-bold flex flex-wrap justify-center items-center text-foreground">
             <span className="opacity-0 animate-fade-in">Hi, I'am</span>
             <span className="opacity-0 animate-fade-in-delay-1 text-primary ml-2">
               Abdelrahman
@@ -17,7 +17,7 @@ export default function HeroSection() {
             <span className="opacity-0 animate-fade-in-delay-2 ml-2">
               Salem
             </span>
-          </h1>
+          </h2>
 
           {/* BIO */}
           <p className="text-lg md:text-xl text-foreground max-w-2xl opacity-0 animate-fade-in-delay-3 mx-auto">
@@ -39,9 +39,11 @@ export default function HeroSection() {
       </div>
 
       {/* SCROLL-DOWN */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce">
-        <span className="text-sm text-foreground/80 mb-2">Scroll</span>
-        <ArrowDown />
+      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce pt-20">
+        <a href="#about" className="flex flex-col items-center">
+          <span className="text-sm text-foreground/80 mb-2">About-Me</span>
+          <ArrowDown />
+        </a>
       </div>
     </section>
   );

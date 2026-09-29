@@ -1,6 +1,7 @@
 import AboutSection from "../components/AboutSection";
 import HeroSection from "../components/HeroSection";
 import Navbar from "../components/Navbar";
+import SkillSection from "../components/SkillSection";
 import StarsBackground from "../components/StarsBackground";
 import ThemeToggle from "../components/ThemeToggle";
 
@@ -21,6 +22,8 @@ const Home = () => {
         <HeroSection />
 
         <AboutSection />
+
+        <SkillSection />
       </main>
 
       {/* Footer */}
