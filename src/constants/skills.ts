@@ -1,5 +1,5 @@
 import type { IconType } from "react-icons";
-import { FaBug, FaDatabase, FaHtml5, FaUserShield } from "react-icons/fa";
+import { FaBug, FaDatabase, FaUserShield } from "react-icons/fa";
 import {
   SiJavascript,
   SiReact,
@@ -9,7 +9,6 @@ import {
   SiExpress,
   SiMongodb,
   SiPostgresql,
-  SiGithub,
   SiDocker,
   SiPython,
   SiHtml5,
@@ -22,9 +21,9 @@ import {
   SiGnubash,
   SiPostman,
   SiSwagger,
-  SiGithubcopilot,
   SiCplusplus,
 } from "react-icons/si";
+
 import { TbApi } from "react-icons/tb";
 
 export type Skill = {
@@ -130,18 +129,19 @@ export const skills = [
     color: "#85EA2D",
     category: "tools",
   },
-  {
-    name: "Git & GitHub",
-    icon: SiGithub,
-    color: "currentColor",
-    category: "tools",
-  },
-  {
-    name: "GitHub Copilot",
-    icon: SiGithubcopilot,
-    color: "currentColor",
-    category: "tools",
-  },
 ];
 
 export const categories = new Set(skills.map((skill) => skill.category));
+
+// {
+//   name: "Git & GitHub",
+//   icon: SiGithub,
+//   color: "currentColor",
+//   category: "tools",
+// },
+// {
+//   name: "GitHub Copilot",
+//   icon: SiGithubcopilot,
+//   color: "currentColor",
+//   category: "tools",
+// },

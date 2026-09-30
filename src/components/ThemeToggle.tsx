@@ -3,30 +3,19 @@ import { useEffect, useState } from "react";
 import { cn } from "../lib/ulils";
 
 const ThemeToggle = () => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(
+    () => localStorage.getItem("theme") === "dark",
+  );
 
+  // Effect only handles the DOM side effect, not state
   useEffect(() => {
-    const theme = localStorage.getItem("theme");
-
-    if (theme === "dark") {
-      document.documentElement.classList.add("dark");
-      setIsDarkMode(true);
-    } else {
-      document.documentElement.classList.remove("dark");
-      setIsDarkMode(false);
-    }
-  }, []);
+    document.documentElement.classList.toggle("dark", isDarkMode);
+  }, [isDarkMode]);
 
   const toggleTheme = () => {
-    if (isDarkMode) {
-      document.documentElement.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-      setIsDarkMode(false);
-    } else {
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-      setIsDarkMode(true);
-    }
+    const next = !isDarkMode;
+    setIsDarkMode(next);
+    localStorage.setItem("theme", next ? "dark" : "light");
   };
 
   return (

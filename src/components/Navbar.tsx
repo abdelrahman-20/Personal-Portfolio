@@ -35,7 +35,7 @@ const Navbar = () => {
       <div className="container flex items-center justify-between">
         {/* Logo */}
         <a
-          href="/"
+          href="#"
           className="text-xl font-bold text-primary flex items-center"
         >
           <span className="relative z-10 cursor-pointer">
