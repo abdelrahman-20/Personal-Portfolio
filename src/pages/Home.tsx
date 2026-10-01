@@ -7,10 +7,11 @@ import StarsBackground from "../components/sections/StarsBackground";
 import ThemeToggle from "../components/ThemeToggle";
 import ContactSection from "../components/sections/ContactSection";
 import { Toaster } from "@/components/ui/sonner";
+import Footer from "@/components/Footer";
 
 const Home = () => {
   return (
-    <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
+    <div className="min-h-screen bg-background text-foreground text-sm overflow-x-hidden">
       {/* Theme Toggle */}
       <ThemeToggle />
 
@@ -34,6 +35,7 @@ const Home = () => {
       </main>
 
       {/* Footer */}
+      <Footer />
     </div>
   );
 };

@@ -1,5 +1,5 @@
 import { useState, type SubmitEventHandler } from "react";
-import { Check, Copy, Delete, Send } from "lucide-react";
+import { ArrowUp, Check, Copy, Delete, Send } from "lucide-react";
 import { contactInfo } from "../../constants/contactInfo";
 import { toast } from "sonner";
 import { cn } from "@/lib/ulils";
@@ -231,6 +231,16 @@ const ContactSection = () => {
           </div>
         </div>
       </div>
+
+      <a
+        href="#hero"
+        className={cn(
+          "absolute p-2 rounded-full bg-primary/30 hover:bg-primary/50",
+          "bottom-6 right-8",
+        )}
+      >
+        <ArrowUp size={24} />
+      </a>
     </section>
   );
 };
