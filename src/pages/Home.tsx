@@ -1,10 +1,11 @@
-import AboutSection from "../components/AboutSection";
-import HeroSection from "../components/HeroSection";
+import AboutSection from "../components/sections/AboutSection";
+import HeroSection from "../components/sections/HeroSection";
 import Navbar from "../components/Navbar";
-import ProjectSection from "../components/ProjectSection";
-import SkillSection from "../components/SkillSection";
-import StarsBackground from "../components/StarsBackground";
+import ProjectSection from "../components/sections/ProjectSection";
+import SkillSection from "../components/sections/SkillSection";
+import StarsBackground from "../components/sections/StarsBackground";
 import ThemeToggle from "../components/ThemeToggle";
+import ContactSection from "../components/sections/ContactSection";
 
 const Home = () => {
   return (
@@ -24,6 +25,7 @@ const Home = () => {
         <AboutSection />
         <SkillSection />
         <ProjectSection />
+        <ContactSection />
       </main>
 
       {/* Footer */}

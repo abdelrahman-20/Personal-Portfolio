@@ -3,7 +3,7 @@ import { ArrowDown, Briefcase, Code, University } from "lucide-react";
 const AboutSection = () => {
   return (
     <section id="about" className="relative flex min-h-screen items-center">
-      <div className="container max-w-5xl mx-auto  py-24 px-5 space-y-10">
+      <div className="container max-w-5xl mx-auto  py-24 px-5 space-y-8">
         {/* SECTION-HEADER */}
         <h2 className="text-4xl md:text-5xl font-bold">
           About <span className="text-primary">Me</span>
@@ -11,19 +11,19 @@ const AboutSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           {/* LEFT-COLUMN */}
-          <div className="space-y-10">
+          <div className="space-y-8">
             {/* SIMPLE-INTRO */}
             <h3 className="text-lg md:text-xl font-semibold">
               Passionate <span className="text-primary">Web Developer</span>,
               And Software Engineer
             </h3>
 
-            <p className="text-foreground/80">
+            <p className="text-foreground/70">
               Software Engineer and Web Developer committed to lifelong learning
               and innovation
             </p>
 
-            <p className="text-foreground/80">
+            <p className="text-foreground/70">
               Always exploring new technologies and contributing to projects
               that make different
             </p>

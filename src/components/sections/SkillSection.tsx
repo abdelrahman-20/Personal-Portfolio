@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { categories, skills, type Skill } from "../constants/skills";
-import { cn } from "../lib/ulils";
+import { categories, skills, type Skill } from "../../constants/skills";
+import { cn } from "../../lib/ulils";
 import { ArrowDown } from "lucide-react";
 
 export function SkillCard({ skill }: { skill: Skill }) {
@@ -23,7 +23,7 @@ const SkillSection = () => {
 
   return (
     <section id="skills" className="relative flex min-h-screen items-center">
-      <div className="container max-w-5xl mx-auto  py-24 px-5 space-y-10">
+      <div className="container max-w-5xl mx-auto  py-24 px-5 space-y-8">
         {/* SECTION-HEADER */}
         <h2 className="text-4xl md:text-5xl font-bold">
           My <span className="text-primary">Skills</span>

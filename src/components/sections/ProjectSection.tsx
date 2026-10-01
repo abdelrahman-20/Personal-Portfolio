@@ -1,6 +1,6 @@
 import { ArrowLeft, ArrowRight, ExternalLink } from "lucide-react";
 import { useState } from "react";
-import { projects } from "../constants/projects";
+import { projects } from "../../constants/projects";
 import { SiGithub } from "react-icons/si";
 import type { Swiper as SwiperInstance } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -11,14 +11,16 @@ const ProjectSection = () => {
 
   return (
     <section id="projects" className="relative flex min-h-screen items-center">
-      <div className="container mx-auto max-w-6xl space-y-6 px-5 py-24">
+      <div className="container mx-auto max-w-6xl space-y-8 px-5 py-24">
         {/* SECTION-HEADER */}
         <h2 className="text-4xl md:text-5xl font-bold">
           Featured <span className="text-primary">Projects</span>
         </h2>
 
-        <p className="text-primary-foreground/70 mb-10 max-w-2xl mx-auto">
-          Here are some of my project
+        <p className="text-primary-foreground/70 mb-10 max-w-3xl mx-auto">
+          Here are some of my project showcases, demonstrating my skills and
+          expertise in web development. Each project highlights my ability to
+          create innovative solutions and deliver high-quality results.
         </p>
 
         {/* PROJECT CARDS */}
