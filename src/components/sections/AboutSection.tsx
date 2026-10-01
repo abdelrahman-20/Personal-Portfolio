@@ -1,3 +1,4 @@
+import { cvDownloadLink } from "@/constants/downloadcv";
 import { ArrowDown, Briefcase, Code, University } from "lucide-react";
 
 const AboutSection = () => {
@@ -33,7 +34,11 @@ const AboutSection = () => {
               <a href="#contact" className="cosmic-button">
                 Get In Touch
               </a>
-              <a href="#" className="cosmic-foreground-button">
+              <a
+                href={cvDownloadLink}
+                className="cosmic-foreground-button"
+                target="_blank"
+              >
                 Download-CV
               </a>
             </div>
