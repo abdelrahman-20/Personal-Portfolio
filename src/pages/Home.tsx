@@ -6,6 +6,7 @@ import SkillSection from "../components/sections/SkillSection";
 import StarsBackground from "../components/sections/StarsBackground";
 import ThemeToggle from "../components/ThemeToggle";
 import ContactSection from "../components/sections/ContactSection";
+import { Toaster } from "@/components/ui/sonner";
 
 const Home = () => {
   return (
@@ -21,6 +22,10 @@ const Home = () => {
 
       {/* Main Content */}
       <main>
+        {/* Shadcn/UI Toaster */}
+        <Toaster />
+
+        {/* Sections */}
         <HeroSection />
         <AboutSection />
         <SkillSection />

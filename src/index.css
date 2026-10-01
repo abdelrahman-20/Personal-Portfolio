@@ -1,14 +1,30 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@custom-variant dark (&:is(.dark *));
 
 @theme {
   --color-border: hsl(var(--border));
   --color-background: hsl(var(--background));
   --color-foreground: hsl(var(--foreground));
-
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
   --color-primary: hsl(var(--primary));
   --color-primary-foreground: hsl(var(--primary-foreground));
-
   --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
 
   --animate-float: float 6s ease-in-out infinite;
   --animate-pulse-subtle: pulse-subtle 4s ease-in-out infinite;
@@ -71,11 +87,23 @@
     --foreground: 222 47% 11%;
 
     --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --popover: hsl(var(--card));
+    --popover-foreground: hsl(var(--foreground));
 
     --primary: 250 47% 60%;
     --primary-foreground: 210 40% 98%;
-
+    --secondary: 214 32% 94%;
+    --secondary-foreground: 222 47% 11%;
+    --muted: 214 32% 94%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 250 47% 96%;
+    --accent-foreground: 250 47% 35%;
+    --destructive: 0 84% 60%;
     --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 250 47% 60%;
+    --radius: 0.625rem;
   }
 
   .dark {
@@ -83,23 +111,34 @@
     --foreground: 213 31% 91%;
 
     --card: 222 47% 8%;
+    --card-foreground: 213 31% 91%;
+    --popover: hsl(var(--card));
+    --popover-foreground: hsl(var(--foreground));
 
     --primary: 250 65% 65%;
     --primary-foreground: 213 31% 91%;
-
+    --secondary: 217 33% 14%;
+    --secondary-foreground: 213 31% 91%;
+    --muted: 217 33% 14%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 250 40% 18%;
+    --accent-foreground: 250 65% 80%;
+    --destructive: 0 63% 40%;
     --border: 217 33% 20%;
+    --input: 217 33% 20%;
+    --ring: 250 65% 65%;
   }
 
   * {
-    @apply border-border;
+    @apply border-border outline-ring/50;
   }
 
   html {
-    @apply scroll-smooth;
+    @apply scroll-smooth font-sans;
   }
 
   body {
-    @apply bg-background text-foreground transition-colors duration-300;
+    @apply transition-colors duration-300 bg-background text-foreground;
     font-feature-settings:
       "rlig" 1,
       "calt" 1;

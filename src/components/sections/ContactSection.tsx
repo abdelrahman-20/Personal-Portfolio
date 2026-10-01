@@ -1,8 +1,11 @@
 import { useState, type SubmitEventHandler } from "react";
-import { Check, Copy, Send } from "lucide-react";
+import { Check, Copy, Delete, Send } from "lucide-react";
 import { contactInfo } from "../../constants/contactInfo";
+import { toast } from "sonner";
+import { cn } from "@/lib/ulils";
 
 const ContactSection = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [copyStatus, setCopyStatus] = useState<{
     label: string;
     success: boolean;
@@ -20,18 +23,35 @@ const ContactSection = () => {
   const handleContactSubmit: SubmitEventHandler<HTMLFormElement> = (event) => {
     event.preventDefault();
 
-    const formData = new FormData(event.currentTarget);
-    const name = String(formData.get("name") ?? "");
-    const email = String(formData.get("email") ?? "");
-    const message = String(formData.get("message") ?? "");
-    const recipient =
-      contactInfo.find((contact) => contact.label === "Email")?.copyValue ?? "";
-    const subject = encodeURIComponent(`Portfolio inquiry from ${name}`);
-    const body = encodeURIComponent(
-      `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
-    );
+    try {
+      setIsSubmitting(true);
+      const formData = new FormData(event.currentTarget);
+      const name = String(formData.get("name") ?? "");
+      const email = String(formData.get("email") ?? "");
+      const message = String(formData.get("message") ?? "");
+      const recipient =
+        contactInfo.find((contact) => contact.label === "Email")?.copyValue ??
+        "";
+      const subject = encodeURIComponent(`Portfolio inquiry from ${name}`);
+      const body = encodeURIComponent(
+        `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
+      );
 
-    window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`;
+      setTimeout(() => {
+        toast("Sending The Message Via Email ✅", {
+          position: "bottom-right",
+        });
+      }, 1000);
+
+      window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`;
+    } catch (error) {
+      setIsSubmitting(false);
+      setTimeout(() => {
+        toast("Something went wrong, Please Try Again Later ❌", {
+          position: "bottom-right",
+        });
+      }, 1000);
+    }
   };
 
   return (
@@ -180,13 +200,29 @@ const ContactSection = () => {
                 />
               </div>
 
-              <button
-                type="submit"
-                className="cosmic-button flex w-full items-center justify-center gap-2"
-              >
-                Send Message
-                <Send size={16} aria-hidden="true" />
-              </button>
+              <div className="flex flex-col md:flex-row justify-center items-center gap-5">
+                <button
+                  type="submit"
+                  className={cn(
+                    "cosmic-button flex w-full items-center justify-center gap-2 flex-2",
+                    isSubmitting && "cursor-not-allowed opacity-70",
+                  )}
+                  disabled={isSubmitting}
+                >
+                  Send Message
+                  <Send size={16} aria-hidden="true" />
+                </button>
+
+                <button
+                  type="reset"
+                  className="cosmic-foreground-button flex w-full items-center justify-center gap-2 flex-1"
+                  onClick={() => setIsSubmitting(false)}
+                >
+                  Clear
+                  <Delete size={16} aria-hidden="true" />
+                </button>
+              </div>
+
               <p className="text-center text-xs text-foreground/55">
                 Your default email app will open with your message ready to
                 send.
