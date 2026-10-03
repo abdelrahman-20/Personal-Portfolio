@@ -10,7 +10,7 @@ export default function HeroSection() {
         <div className="space-y-8">
           {/* SECTION-HEADER */}
           <h2 className="text-4xl md:text-5xl font-bold flex flex-wrap justify-center items-center text-foreground">
-            <span className="opacity-0 animate-fade-in">Hi, I'am</span>
+            <span className="opacity-0 animate-fade-in">Hi, I'm</span>
             <span className="opacity-0 animate-fade-in-delay-1 text-primary ml-2">
               Abdelrahman
             </span>

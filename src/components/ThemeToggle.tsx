@@ -4,7 +4,7 @@ import { cn } from "../lib/ulils";
 
 const ThemeToggle = () => {
   const [isDarkMode, setIsDarkMode] = useState(
-    () => localStorage.getItem("theme") === "dark",
+    () => localStorage.getItem("theme") !== "light",
   );
 
   // Effect only handles the DOM side effect, not state
